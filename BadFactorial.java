@@ -1,4 +1,8 @@
 public class BadFactorial {
+
+    public static string main(String[] args){
+        calculateFactorial(5);
+    }
     // Bad: No input validation (can lead to StackOverflowError or wrong output)
     public static long calculateFactorial(int n) {
         // Bad: Implicitly relies on the caller to pass non-negative number

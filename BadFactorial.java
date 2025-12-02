@@ -1,7 +1,7 @@
 public class BadFactorial {
 
-    public static string main(String[] args){
-        calculateFactorial(5);
+    public static void main(String[] args){
+        System.out.println("Factorial of 5: " + calculateFactorial(5));
     }
     // Bad: No input validation (can lead to StackOverflowError or wrong output)
     public static long calculateFactorial(int n) {

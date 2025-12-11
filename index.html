@@ -1,0 +1,58 @@
+<html><body>
+
+    <style>
+
+        /* Basic Widget Container Styling */
+.newsletter-widget {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    max-width: 350px; /* Constrain widget size */
+    margin: 20px auto;
+}
+
+/* Form Element Styling */
+.newsletter-widget form {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter-widget label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.newsletter-widget input {
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+}
+
+.newsletter-widget button {
+    background-color: #e2001a; /* Atari-like color */
+    color: white;
+    padding: 10px;
+    margin-top: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+    </style>
+
+    <div class="newsletter-widget">
+    <h3>Sign Up for the Atari Newsletter!</h3>
+    
+    <form id="newsletter-form" action="/api/subscribe" method="POST">
+        
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="John Doe">
+        
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="you@atari.com">
+        
+        <button type="submit">Subscribe Now</button>
+    </form>
+    
+    <p id="form-feedback" aria-live="polite" style="margin-top: 10px;"></p>
+</div>
+</body></html>

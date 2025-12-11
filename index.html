@@ -1,5 +1,31 @@
 <html><body>
+<script>
+    // Get the button element
+    const backToTopBtn = document.getElementById("backToTopBtn");
+    const scrollThreshold = 200; // Pixels scrolled before button appears
 
+    // Function to check scroll position and show/hide the button
+    function scrollFunction() {
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            backToTopBtn.classList.add('showBtn');
+        } else {
+            backToTopBtn.classList.remove('showBtn');
+        }
+    }
+
+    // Function to scroll smoothly back to the top
+    function topFunction() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Enables the smooth scroll effect
+        });
+    }
+
+    // Attach the functions to events
+    window.onscroll = scrollFunction; // Check scroll position whenever user scrolls
+    backToTopBtn.addEventListener('click', topFunction); // Scroll when button is clicked
+
+</script>
     <style>
 
         /* Basic Widget Container Styling */
@@ -37,6 +63,35 @@
     border: none;
 }
 
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 30px; /* Distance from the right of the viewport */
+    z-index: 99; /* Ensures it stays on top of other elements */
+    border: none;
+    outline: none;
+    background-color: #e2001a; /* Atari red color */
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%; /* Makes it circular */
+    font-size: 18px;
+    line-height: 1;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#backToTopBtn:hover {
+    background-color: #ff0000;
+}
+
+/* Class added/removed by JavaScript */
+.showBtn {
+    display: block !important;
+}
+
     </style>
 
     <div class="newsletter-widget">
@@ -55,4 +110,7 @@
     
     <p id="form-feedback" aria-live="polite" style="margin-top: 10px;"></p>
 </div>
+<button id="backToTopBtn" title="Go to top">
+    ↑
+</button>
 </body></html>

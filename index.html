@@ -1,5 +1,17 @@
 <html><body>
 
+    <script>
+        const year = new Date().getFullYear();
+
+    // 2. Locate the span element by its ID
+    const yearElement = document.getElementById('current-year');
+
+    // 3. Check if the element exists and update its content
+    if (yearElement) {
+        yearElement.textContent = year;
+    }
+    </script>
+
     <style>
 
         /* Basic Widget Container Styling */
@@ -55,4 +67,7 @@
     
     <p id="form-feedback" aria-live="polite" style="margin-top: 10px;"></p>
 </div>
+<footer>
+    <p>&copy; <span id="current-year"></span> Atari. All Rights Reserved.</p>
+</footer>
 </body></html>

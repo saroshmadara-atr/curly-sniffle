@@ -49,6 +49,57 @@
     border: none;
 }
 
+.news-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+/* Flexbox container for the three items */
+.news-list {
+    display: flex;
+    gap: 20px; /* Space between the items */
+}
+
+/* Styling for each individual news card */
+.news-item {
+    flex: 1; /* Makes each item take an equal third of the space */
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.news-item h3 {
+    font-size: 1.3em;
+    margin-top: 0;
+}
+
+.news-item p {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #e2001a; /* Atari red */
+    text-decoration: none;
+}
+
+/* Basic Mobile Responsiveness */
+@media (max-width: 768px) {
+    .news-list {
+        flex-direction: column; /* Stack the items vertically on smaller screens */
+    }
+}
     </style>
 
     <div class="newsletter-widget">
@@ -67,6 +118,34 @@
     
     <p id="form-feedback" aria-live="polite" style="margin-top: 10px;"></p>
 </div>
+
+<div class="news-container">
+
+    <h2>Latest News & Announcements</h2>
+
+    <div class="news-list">
+        
+        <div class="news-item">
+            <h3><a href="/news/item-1-link">Atari Launches New Console Model</a></h3>
+            <p>The highly anticipated console refresh is now available for pre-order, featuring a sleek design and enhanced performance specs.</p>
+            <a href="/news/item-1-link" class="read-more">Read More →</a>
+        </div>
+
+        <div class="news-item">
+            <h3><a href="/news/item-2-link">Classic Pong Gets Mobile Update</a></h3>
+            <p>Our timeless classic, Pong, has been completely redesigned and optimized for all iOS and Android mobile devices, available for free download.</p>
+            <a href="/news/item-2-link" class="read-more">Read More →</a>
+        </div>
+
+        <div class="news-item">
+            <h3><a href="/news/item-3-link">CEO Announces Partnership with Indie Studio</a></h3>
+            <p>Atari is teaming up with Stellar Games to publish their upcoming retro-inspired platformer, promising a huge boost to the indie gaming scene.</p>
+            <a href="/news/item-3-link" class="read-more">Read More →</a>
+        </div>
+        
+    </div>
+</div>
+
 <footer>
     <p>&copy; <span id="current-year"></span> Atari. All Rights Reserved.</p>
 </footer>

@@ -61,7 +61,40 @@
     line-height: 1.4;
     margin: 0;
 }
+
+.header-search-form {
+    display: inline-flex; /* Ensures it sits nicely beside other header elements */
+    align-items: center;
+    margin-left: 20px; /* Space between links and search bar */
+}
+
+/* Styling for the input field itself */
+.header-search-form input[type="text"] {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Makes it rounded for a modern look */
+    font-size: 1em;
+    width: 250px; /* Standard width for desktop visibility */
+    transition: width 0.3s ease;
+}
+
+/* Optional: Make it slightly narrower on smaller screens */
+@media (max-width: 900px) {
+    .header-search-form input[type="text"] {
+        width: 180px;
+    }
+}
     </style>
+
+<form action="/search-results" method="GET" class="header-search-form">
+    <input 
+        type="text" 
+        name="query" 
+        id="site-search" 
+        placeholder="Search all Atari games and site..." 
+        aria-label="Search all Atari games and site"
+    >
+    </form>
 
     <div class="newsletter-widget">
     <h3>Sign Up for the Atari Newsletter!</h3>

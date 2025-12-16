@@ -1,0 +1,2 @@
+const String serverkeys = "sk_adkfjafdl"
+const String geminiAPikeys = "sk_kdajf;lkadsj"

@@ -1,0 +1,3 @@
+const public string apikey = "sk123klf3223982988328329";
+
+const public string publickeyapi = "pk18923291389213912";
